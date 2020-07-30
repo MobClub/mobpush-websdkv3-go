@@ -37,18 +37,28 @@
        
 
 
-
-
 # 使用方式
 
- go get github.com/xxx  
+ go get github.com/MobClub/mobpush-websdkv3-go   
  从开发者平台获取 appkey 和 appSecert
 
-#使用示例
+## 使用示例
 
-###推送Rids  
-
+#### 发送推送示例片段代码 
+    
+   
     workNo := "a7b9f1918c596ea"
     appkey,appSecert := "appkey","appSecert"
 	client := NewPushClient(appkey,appSecert);
 	res, err := client.PushByRids(workNo, "测试推送标题", "测试推送内容", []string{"rids1", "rids1"})
+
+#### 统计查询示例片段代码
+
+ 
+    workNo := "a7b9f1918c596ea"
+    appkey,appSecert := "appkey","appSecert"
+    client := NewPushClient(appkey,appSecert);
+    res,err := client.GetStatsByWorkIds([]string{workNo})
+    if err != nil{
+    	t.Error("error")
+    }
