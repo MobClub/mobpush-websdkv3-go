@@ -7,6 +7,7 @@ const (
 	PUSH_CANCEL_TASK_URI   = "/push/drop";
 	PUSH_REPLACE_TASK_URI  = "/push/replace";
 	PUSH_RECALL_TASK_URI   = "/push/recall";
+	PUSH_MULTI_URI   = "/v3/push/createMulti";
 )
 
 func (client *PushClient) Push(push Push) ([]byte, error) {
@@ -81,4 +82,8 @@ func (client *PushClient) GetPushByWorkno(workNo string) ([]byte, error) {
 	params := client.NewRequestData()
 	params["workno"] = workNo
 	return GetHTTPClient().PostJSON(client, BASE_URL+PUSH_GET_BY_WORKNO_URI, params)
+}
+
+func (client *PushClient) PushMulti(pushMulti PushMulti) ([]byte, error) {
+	return GetHTTPClient().PostJSON(client, BASE_URL+PUSH_MULTI_URI, pushMulti)
 }

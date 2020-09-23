@@ -1,19 +1,20 @@
 package mob_push_sdk
 
 type PushNotify struct {
-	TaskCron       int           `json:"taskCron"`
-	TaskTime       int64         `json:"taskTime"`
-	Plats          []int         `json:"plats"`
-	IosProduct     int           `json:"iosProduct"`
-	OfflineSeconds int           `json:"offlineSeconds"`
-	Content        string        `json:"content"`
-	Title          string        `json:"title"`
-	Type           int           `json:"type"`
-	Url            string        `json:"url"`
+	TaskCron       int            `json:"taskCron"`
+	TaskTime       int64          `json:"taskTime"`
+	Plats          []int          `json:"plats"`
+	IosProduct     int            `json:"iosProduct"`
+	OfflineSeconds int            `json:"offlineSeconds"`
+	Content        string         `json:"content"`
+	Title          string         `json:"title"`
+	Type           int            `json:"type"`
+	Url            string         `json:"url"`
 	CustomNotify   *CustomNotify  `json:"customNotify"`
 	AndroidNotify  *AndroidNotify `json:"androidNotify"`
 	IosNotify      *IosNotify     `json:"iosNotify"`
-	ExtrasMapList  []PushMap     `json:"extrasMapList"`
+	ExtrasMapList  []PushMap      `json:"extrasMapList"`
+	Speed          int            `json:"speed"`
 }
 
 type CustomNotify struct {
@@ -79,4 +80,3 @@ func (push *Push) setIosNotify(iosNotify IosNotify) *Push {
 	push.PushNotify.IosNotify = &iosNotify
 	return push
 }
-
