@@ -28,7 +28,7 @@ type AndroidNotify struct {
 	Warn    string   `json:"warn"`
 	Style   int      `json:"style"`
 	Content []string `json:"content"`
-	Sound   []string `json:"sound"`
+	Sound   string   `json:"sound"`
 }
 
 type IosNotify struct {
