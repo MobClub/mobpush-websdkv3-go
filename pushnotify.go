@@ -4,7 +4,7 @@ type PushNotify struct {
 	TaskCron       int            `json:"taskCron"`
 	TaskTime       int64          `json:"taskTime"`
 	Plats          []int          `json:"plats"`
-	IosProduct     int            `json:"iosProduct"`
+	IosProduction  int            `json:"iosProduction"`
 	OfflineSeconds int            `json:"offlineSeconds"`
 	Content        string         `json:"content"`
 	Title          string         `json:"title"`
@@ -78,5 +78,10 @@ func (push *Push) setAndroidNotify(androidNotify AndroidNotify) *Push {
 
 func (push *Push) setIosNotify(iosNotify IosNotify) *Push {
 	push.PushNotify.IosNotify = &iosNotify
+	return push
+}
+
+func (push *Push) SetIOSProduction(iosProduction int) *Push {
+	push.PushNotify.IosProduction = iosProduction
 	return push
 }
