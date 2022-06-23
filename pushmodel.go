@@ -1,11 +1,11 @@
 package mob_push_sdk
 
 type Push struct {
-	WorkNo       string       `json:"workno"`
-	Source       string       `json:"source"`
-	Appkey       string       `json:"appkey"`
-	PushTarget   PushTarget   `json:"pushTarget"`
-	PushNotify   PushNotify   `json:"pushNotify"`
+	WorkNo       string        `json:"workno"`
+	Source       string        `json:"source"`
+	Appkey       string        `json:"appkey"`
+	PushTarget   PushTarget    `json:"pushTarget"`
+	PushNotify   PushNotify    `json:"pushNotify"`
 	PushOperator *PushOperator `json:"pushOperator,omitempty"`
 	PushForward  *PushForward  `json:"pushForward,omitempty"`
 }
@@ -21,19 +21,15 @@ func (push *Push) getDefaultPushModel() *Push {
 	push.Source = "webapi"
 	push.PushTarget.TagsType = "1"
 
-	push.PushNotify.Plats = []int{1,2}
+	push.PushNotify.Plats = []int{1, 2}
 	push.PushNotify.Type = 1
-	push.PushNotify.IosProduct = 1
+	push.PushNotify.IosProduction = 1
 	push.PushNotify.OfflineSeconds = 3600
-
-
-
 
 	//push.PushNotify.AndroidNotify.Warn = "12"
 	//push.PushNotify.AndroidNotify.Style = 0
 	//push.PushNotify.IosNotify.Sound = "default"
 	//push.PushForward.NextType = 0
-
 	return push
 }
 
