@@ -23,27 +23,27 @@ type CustomNotify struct {
 }
 
 type AndroidNotify struct {
-	AppName string   `json:"appName"`
-	Title   string   `json:"title"`
-	Warn    string   `json:"warn"`
-	Style   int      `json:"style"`
-	Content []string `json:"content"`
-	Sound   string   `json:"sound"`
+	AppName   string   `json:"appName,omitempty"`
+	Title     string   `json:"title,omitempty"`
+	Warn      string   `json:"warn,omitempty"`
+	Style     int      `json:"style,omitempty"`
+	Content   []string `json:"content,omitempty"`
+	Sound     string   `json:"sound,omitempty"`
+	Badge     int      `json:"androidBadge,omitempty"`
+	BadgeType int      `json:"androidBadgeType,omitempty"`
 }
 
 type IosNotify struct {
-	Title            string `json:"title"`
-	SubTitle         string `json:"subtitle"`
-	Sound            string `json:"sound"`
-	Badge            string `json:"badge"`
-	BadgeType        int    `json:"badgeType"`
-	CateGory         string `json:"category"`
-	SLIENT           int    `json:"SLIENT"`
-	SlientPush       int    `json:"slientPush"`
-	ContentAvailable int    `json:"contentAvailable"`
-	MutableContent   int    `json:"mutableContent"`
-	AttachmentType   int    `json:"attachmentType"`
-	Attachment       string `json:"attachment"`
+	Badge            int    `json:"badge,omitempty"`
+	BadgeType        int    `json:"badgeType,omitempty"`
+	Category         string `json:"category,omitempty"`
+	Sound            string `json:"sound,omitempty"`
+	SubTitle         string `json:"subtitle,omitempty"`
+	SlientPush       int    `json:"slientPush,omitempty"`
+	ContentAvailable int    `json:"contentAvailable,omitempty"`
+	MutableContent   int    `json:"mutableContent,omitempty"`
+	AttachmentType   int    `json:"attachmentType,omitempty"`
+	Attachment       string `json:"attachment,omitempty"`
 }
 
 type PushMap struct {
